@@ -2,21 +2,18 @@ import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import 'zone.js';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { NavbarComponent } from './app/components/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  template: `
-    <h1>Hello from {{ name }}!</h1>
-    <a target="_blank" href="https://angular.dev/overview">
-      Learn more about Angular
-    </a>
-  `,
+  imports: [NavbarComponent],
+  templateUrl: "./main.html",
 })
 export class App {
   name = 'Angular';
 }
 
-bootstrapApplication(App, {
+bootstrapApplication(App, { 
     providers: [provideAnimations()]
 });
